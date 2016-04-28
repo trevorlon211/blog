@@ -44,11 +44,12 @@
       <% end %>
 
       <% if user_signed_in? %>
-       <div class="buttons">
-        <button class="button"><%= link_to "New Post", new_post_path %></button>
-        <button class="button">Log Out</button>
-       </div>
-      <% end %>
+            <a><%= link_to 'Create New Post', new_post_path, :class => "button" %></a>
+          <a><%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "list-group-item" %></a>
+        <% else %>
+          <a><%= link_to'Login', new_user_session_path, :class => "button" %></a>
+          <a><%= link_to'Sign Up', new_user_registration_path, :class => "button" %></a>
+        <% end %>
     </div>
 
 
